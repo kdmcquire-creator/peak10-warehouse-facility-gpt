@@ -81,7 +81,7 @@ type RunResponse = {
   results: ResultRow[];
 };
 
-const API = 'http://localhost:8000';
+const API = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
 const COLORS = {
   debt: '#0f172a',
   pv10: '#2563eb',

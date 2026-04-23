@@ -8,6 +8,15 @@ from .aegis import ping as aegis_ping, entities as aegis_entities, combined_curv
 
 app = FastAPI(title="Peak10 Facility Dashboard API")
 
+@app.get("/")
+def root():
+    return {
+        "ok": True,
+        "service": "Peak10 Facility Dashboard API",
+        "health": "/health",
+        "docs": "/docs",
+    }
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
